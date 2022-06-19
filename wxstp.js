@@ -15,7 +15,7 @@ TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 var configSrc = "\
 Host *\
 	#-S参数表示使用Socks5代理, 如果是HTTP代理则为-H\n\
-	ProxyCommand "+connectExePath+" -S 127.0.0.1:10808 %h %p\n\
+	ProxyCommand "+connectExePath.replace(new RegExp("\\\\","g"),"\\\\")+" -S 127.0.0.1:10808 %h %p\n\
 	# 断开时重试连接的次数\n\
 	ServerAliveCountMax 5\n\
 	# 每隔30秒自动发送一个空的请求以保持连接\n\
